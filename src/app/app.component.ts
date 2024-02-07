@@ -5,14 +5,12 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet],
-  template: `
-    @if (isAdmin) {
-    <button>Erase database</button>
-    } @else {
-    <p>You are not authorized.</p>
-    }
-  `,
+  templateUrl: './app.component.html',
 })
 export class AppComponent {
-  isAdmin = false;
+  ingredientList = [
+    { name: 'noodles', quantity: 1 },
+    { name: 'miso broth', quantity: 1 },
+    { name: 'egg', quantity: 2 },
+  ];
 }
