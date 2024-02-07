@@ -5,12 +5,15 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet],
-  templateUrl: './app.component.html',
+  // templateUrl: './app.component.html',
+  template: `
+    <p>{{ announcement }}</p>
+    <button (click)="transformText()">Abracadabra!</button>
+  `,
 })
 export class AppComponent {
-  ingredientList = [
-    { name: 'noodles', quantity: 1 },
-    { name: 'miso broth', quantity: 1 },
-    { name: 'egg', quantity: 2 },
-  ];
+  announcement = 'Hello again Angular!';
+  transformText() {
+    this.announcement = this.announcement.toUpperCase();
+  }
 }
