@@ -1,19 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ParentComponent } from './parent/parent.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  // templateUrl: './app.component.html',
-  template: `
-    <p>{{ announcement }}</p>
-    <button (click)="transformText()">Abracadabra!</button>
-  `,
+  imports: [RouterOutlet, ParentComponent],
+  templateUrl: './app.component.html',
 })
-export class AppComponent {
-  announcement = 'Hello again Angular!';
-  transformText() {
-    this.announcement = this.announcement.toUpperCase();
-  }
-}
+export class AppComponent {}
